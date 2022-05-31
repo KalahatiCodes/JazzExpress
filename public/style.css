@@ -1,0 +1,25 @@
+body{
+    background-color: #D0B49F;
+    color: #39918C;
+    /* color: #AB6B51; */
+    font-size: 2rem;
+}
+header{
+    padding: 20px;
+    text-align: center;
+    background-color: #2F435A;
+    color: #BF6336;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+input{
+    margin: 1rem;
+}
+main{
+    padding: 0 50px;
+}
+.brown{
+    color: #523A28;
+    font-style:oblique;
+}
+

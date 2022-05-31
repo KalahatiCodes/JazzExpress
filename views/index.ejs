@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Little Jazzy</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <header>
+            <h1>Welcome To A Little Jazzy</h1><span><i class="fa fa-music"></i></span>
+        </header>
+        <main>  
+            <p>Keep Track of Songs to Practice, Composers to Research, and Look Up Your Sheet Music. Highlight to Keep Track of What You'd Like To Practice Next!</p>
+            <div class="container">
+                <div class="row">
+                <div class="col">
+                    <form action="/items" method="POST">
+                        <h4 class="brown">Add Song To Practice List</h4>
+                    <span>Piece Name</span><input type="text" placeholder="Piece Name" name="piece">
+                    <span>Composer Name</span><input type="text" placeholder="Composer Name" name="composer">
+                    <!-- <input type="piece" value="2022-05-20" name="piece"> -->
+                    <!-- <input type="text" placeholder="Message" name="composer"> -->
+                    <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <form>
+                        <h4 class="brown">Search Sheet Music</h4>
+                        <span>Piece Name</span><input type="text" placeholder="Piece Name" name="piece">
+                        <span>Composer Name</span><input type="text" placeholder="Composer Name" name="composer">
+                    <button type="submit">Find Sheet Music</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="posts">
+                <h3>Liste De Practique</h3>
+                <ul class="messages">
+                <% for(var i=0; i<messages.length; i++) {%>
+                <li class="message <%= messages[i].starred ? 'pink' : '' %>"">
+                    <span class="brown">Piece:</span> <%= messages[i].piece %></span>
+                    <span class="brown">Composer:</span> <%= messages[i].composer %></span>
+                    <span><i class="fa-solid fa-delete-left" aria-hidden="true"></i></span> 
+                </li>
+                <% } %>
+                </ul>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>

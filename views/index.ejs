@@ -39,10 +39,12 @@
             <div class="posts">
                 <h3>Liste De Practique</h3>
                 <ul class="messages">
-                <% for(var i=0; i<messages.length; i++) {%>
-                <li class="message <%= messages[i].starred ? 'pink' : '' %>"">
-                    <span class="brown">Piece:</span> <%= messages[i].piece %></span>
-                    <span class="brown">Composer:</span> <%= messages[i].composer %></span>
+                <% for(var i=0; i< messages.length; i++) { %>
+                <li class="message">
+                    <span class="brown">Piece:</span>
+                    <span> <%= messages[i].piece %> </span>
+                    <span class="brown">Composer:</span>
+                    <span> <%= messages[i].composer %></span>
                     <span><i class="fa-solid fa-delete-left" aria-hidden="true"></i></span> 
                 </li>
                 <% } %>

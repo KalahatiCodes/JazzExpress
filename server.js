@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 
-var db, collection;
+let db, collection;
 
 const url = "mongodb+srv://kalahati:Qr4q9FNmhGtBc8Od@listitems.pvnup.mongodb.net/LittleJazzy?retryWrites=true&w=majority";
 const dbName = "LittleJazzy";
@@ -14,7 +14,7 @@ app.listen(1118, () => {
             throw error;
         }
         db = client.db(dbName);
-        console.log("Connected to `" + dbName + "`!");
+        console.log("Connected to `" + 1118 + "`!");
     });
 });
 
@@ -38,24 +38,9 @@ app.post('/items', (req, res) => {
   })
 })
 
-// app.put('/like', (req, res) => {
-//   console.log(req.body)
-//   db.collection('list')
-//   .findOneAndUppiece({piece: req.body.piece, composer: req.body.composer}, {
-//     $set: {
-//       like: `like`
-//     }
-//   }, {
-//     sort: {_id: -1},
-//     upsert: true
-//   }, (err, result) => {
-//     if (err) return res.send(err)
-//     res.send(result)
-//   })
-// })
 
 app.delete('/items', (req, res) => {
-  db.collection('list').findOneAndDelete({piece: req.body.piece,  composer: req.body.composer}, (err, result) => {
+  db.collection('list').findOneAndDelete({piece: req.body.piece, composer: req.body.composer}, (err, result) => {
     if (err) return res.send(500, err)
     res.send('Message deleted!')
   })

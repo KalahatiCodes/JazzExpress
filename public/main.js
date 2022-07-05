@@ -4,8 +4,8 @@ const deleteIt = document.getElementsByClassName("fa-delete-left");
 
 Array.from(deleteIt).forEach(function(element) {
       element.addEventListener('click', function(){
-        const piece = this.parentNode.parentNode.childNodes[1].innerText
-        const composer = this.parentNode.parentNode.childNodes[3].innerText
+        let piece = this.parentNode.parentNode.childNodes[3].innerText
+        let composer = this.parentNode.parentNode.childNodes[7].innerText
         fetch('items', {
           method: 'delete',
           headers: {
